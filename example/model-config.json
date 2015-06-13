@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "MessageContent": {
+    "dataSource": "remoteDS"
+  },
+  "BaiduMap":{
+    "dataSource": "baiduMap"
+  },
+  "Wechat": {
+    "dataSource": "mongoDb",
+    "public": true
+  },
+  "Organization": {
+    "dataSource": "mongoDb",
+    "public": true
+  }
+}

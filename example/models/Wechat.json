@@ -1,0 +1,26 @@
+{
+  "name": "Wechat",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "description": "Appid"
+    },
+    "appsecret": {
+      "type": "string",
+      "required": true
+    },
+    "access_token": {
+      "type": "object"
+    },
+    "ticket": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "acls": [],
+  "methods": []
+}

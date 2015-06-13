@@ -1,0 +1,9 @@
+{
+  "name": "BaiduMap",
+  "base": "Model",
+  "idInjection": false,
+  "properties": {},
+  "validations": [],
+  "acls": [],
+  "methods": []
+}

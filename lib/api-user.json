@@ -1,0 +1,79 @@
+{
+  "subscribers": {
+    "apiMethod": "getFollowers",
+    "description": "获得微信订阅者列表",
+    "accepts": [{
+      "arg": "id",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "nextOpenid",
+      "type": "string",
+      "required": false
+    }],
+    "returns": {
+      "arg": "subscribers",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/:id/subscribers",
+      "verb": "get"
+    }
+  },
+
+
+  "subscriber": {
+    "apiMethod": "getUser",
+    "description": "获得一个订阅者的详情",
+    "accepts": [{
+      "arg": "id",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "openid",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "subscriber",
+      "type": "object",
+      "root": true
+    },
+    "http":{
+      "path": "/:id/subscribers/:openid",
+      "verb": "get"
+    }
+  },
+
+
+  "updateSubscriber": {
+    "apiMethod": "updateRemark",
+    "description": "更新某个微信订阅者的备注内容",
+    "accepts": [{
+      "arg": "id",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "openid",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "remark",
+      "type": "string",
+      "required": true,
+      "http": {
+        "source": "form"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root": true
+    },
+    "http":{
+      "path": "/:id/subscribers/:openid",
+      "verb": "put"
+    }
+  }
+}

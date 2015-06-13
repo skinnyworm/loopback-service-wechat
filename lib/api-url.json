@@ -1,0 +1,24 @@
+{
+  "shortUrl": {
+    "apiMethod": "shorturl",
+    "description": "生成短链接",
+    "accepts": [{
+      "arg": "id",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "longUrl",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/:id/shorturl",
+      "verb": "get"
+    }
+  }
+}

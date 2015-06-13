@@ -1,0 +1,47 @@
+{
+  "refreshTicket": {
+    "apiMethod": "getTicket",
+    "description": "获取js sdk所需的有效js ticket",
+    "accepts": [{
+      "arg": "id",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "ticket",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/:id/jsconf/ticket",
+      "verb": "get"
+    }
+  },
+
+  "jsconf":{
+    "apiMethod": "getJsConfig",
+    "description": "获取微信JS SDK Config的所需参数",
+    "accepts": [{
+      "arg": "id",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "param",
+      "type": "object",
+      "required": true,
+      "description": "{debug: true|false, url:'页面URL', jsApiList:[需要使用的API列表]}",
+      "http:": {
+        "source": "query"
+      }
+    }],
+    "returns": {
+      "arg": "jsconf",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/:id/jsconf",
+      "verb": "get"
+    }
+  }
+}
