@@ -1,3 +1,3 @@
-module.exports = function(Dummy){
+module.exports = function(BaiduMap){
 
 };

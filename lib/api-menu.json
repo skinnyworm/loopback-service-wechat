@@ -1,0 +1,68 @@
+{
+  "findMenu": {
+    "apiMethod": "getMenu",
+    "description": "获取菜单",
+    "accepts": [],
+    "returns": {
+      "arg": "menu",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/menu",
+      "verb": "get"
+    }
+  },
+
+  "findConfiguratedMenu": {
+    "apiMethod": "getMenuConfig",
+    "description": "获取当前菜单，与获取菜单不同，这里可以查询到不是通过API配置的菜单内容",
+    "accepts": [],
+    "returns": {
+      "arg": "menu",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/menu/active",
+      "verb": "get"
+    }
+  },
+
+  "createMenu":{
+    "apiMethod": "createMenu",
+    "description": "创建菜单",
+    "accepts": [{
+      "arg": "menu",
+      "type": "object",
+      "required": true,
+      "http":{
+        "source":"body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/menu",
+      "verb": "post"
+    }
+  },
+
+  "deleteMenu":{
+    "apiMethod": "removeMenu",
+    "description": "删除菜单",
+    "accepts": [],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/menu",
+      "verb": "delete"
+    }
+  }
+}

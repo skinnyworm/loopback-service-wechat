@@ -1,0 +1,83 @@
+{
+  "findGroups": {
+    "apiMethod": "getGroups",
+    "description": "获取分组列表",
+    "accepts": [],
+    "returns": {
+      "arg": "groups",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/groups",
+      "verb": "get"
+    }
+  },
+
+  "createGroup":{
+    "apiMethod": "createGroup",
+    "description": "创建分组",
+    "accepts": [{
+      "arg": "name",
+      "type": "string",
+      "required": true,
+      "http":{
+        "source":"form"
+      }
+    }],
+    "returns": {
+      "arg": "group",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/groups",
+      "verb": "post"
+    }
+  },
+
+  "updateGroup":{
+    "apiMethod": "updateGroup",
+    "description": "更新分组名字",
+    "accepts": [{
+      "arg": "groupid",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "name",
+      "type": "string",
+      "required": true,
+      "http":{
+        "source":"form"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/groups/:groupid",
+      "verb": "put"
+    }
+  },
+
+  "deleteGroup":{
+    "apiMethod": "removeGroup",
+    "description": "删除分组",
+    "accepts": [{
+      "arg": "groupid",
+      "type": "number",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/groups/:groupid",
+      "verb": "delete"
+    }
+  }
+}

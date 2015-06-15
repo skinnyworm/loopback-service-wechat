@@ -1,0 +1,253 @@
+{
+
+  "findTempMedia": {
+    "apiMethod": "getMedia",
+    "description": "获取临时素材",
+    "accepts": [{
+      "arg": "mediaId",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/temp/:mediaId",
+      "verb": "get"
+    }
+  },
+
+  "uploadTempMedia": {
+    "apiMethod": "uploadMedia",
+    "description":  [
+      "使用用Multipart Form上传临时素材, 类型为image, voice, video, thumb",
+      "文件上传的使用 'media' field"],
+    "accepts": [{
+      "arg": "req",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "req"
+      }
+    },{
+      "arg": "type",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/temp/:type",
+      "verb": "post"
+    }
+  },
+
+
+
+  "createPermNews":{
+    "apiMethod": "uploadNewsMaterial",
+    "description": "新增永久图文素材",
+    "accepts": [{
+      "arg": "news",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/perm/news",
+      "verb": "post"
+    }
+  },
+
+  "updatePermNews":{
+    "apiMethod": "updateNewsMaterial",
+    "description": "更新永久图文素材",
+    "accepts": [{
+      "arg": "news",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/perm/news",
+      "verb": "put"
+    }
+  },
+
+  "uploadPermMedia": {
+    "apiMethod": "uploadMaterial",
+    "description": [
+      "使用用Multipart Form上传永久素材, 类型为image, voice, video, thumb。",
+      "文件上传的使用 'media' field。",
+      "视频素材上传时，需额外添加 'description' field。"],
+    "accepts": [{
+      "arg": "req",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "req"
+      }
+    },{
+      "arg": "type",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/perm/:type",
+      "verb": "post"
+    }
+  },
+
+  "countPerm": {
+    "apiMethod": "getMaterialCount",
+    "description": "获取素材总数",
+    "accepts": [],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/perm/count",
+      "verb": "get"
+    }
+  },
+
+  "permList": {
+    "apiMethod": "getMaterials",
+    "description": "获取永久素材列表",
+    "accepts": [{
+      "arg": "type",
+      "description": "素材的类型，图片（image）、视频（video）、语音 （voice）、图文（news）",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "offset",
+      "description": "从全部素材的该偏移位置开始返回，0表示从第一个素材 返回",
+      "type": "number",
+      "required": true
+    },{
+      "arg": "count",
+      "description": "返回素材的数量，取值在1到20之间",
+      "type": "number",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/perm",
+      "verb": "get"
+    }
+  },
+
+  "findPerm": {
+    "apiMethod": "getMaterial",
+    "description": "根据媒体ID获取永久素材",
+    "accepts": [{
+      "arg": "mediaId",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/perm/:mediaId",
+      "verb": "get"
+    }
+  },
+
+  "destroyPerm":{
+    "apiMethod": "removeMaterial",
+    "description": "删除永久素材",
+    "accepts": [{
+      "arg": "mediaId",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/perm/:mediaId",
+      "verb": "delete"
+    }
+  },
+
+
+  "createMpNews":{
+    "apiMethod": "uploadNews",
+    "description": "上传图文消息素材【订阅号与服务号认证后均可用】",
+    "accepts": [{
+      "arg": "news",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/mp/news",
+      "verb": "post"
+    }
+  },
+
+  "createMpVideo": {
+    "apiMethod": "uploadMPVideo",
+    "description": "将通过上传下载多媒体文件得到的视频media_id变成视频素材",
+    "accepts": [{
+      "arg": "opts",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/media/mp/video",
+      "verb": "post"
+    }
+  }
+
+}

@@ -1,12 +1,8 @@
 {
-  "subscribers": {
+  "findUsers": {
     "apiMethod": "getFollowers",
     "description": "获得微信订阅者列表",
     "accepts": [{
-      "arg": "id",
-      "type": "string",
-      "required": true
-    },{
       "arg": "nextOpenid",
       "type": "string",
       "required": false
@@ -17,20 +13,16 @@
       "root":true
     },
     "http":{
-      "path": "/:id/subscribers",
+      "path": "/users",
       "verb": "get"
     }
   },
 
 
-  "subscriber": {
+  "findUserById": {
     "apiMethod": "getUser",
     "description": "获得一个订阅者的详情",
     "accepts": [{
-      "arg": "id",
-      "type": "string",
-      "required": true
-    },{
       "arg": "openid",
       "type": "string",
       "required": true
@@ -41,20 +33,16 @@
       "root": true
     },
     "http":{
-      "path": "/:id/subscribers/:openid",
+      "path": "/users/:openid",
       "verb": "get"
     }
   },
 
 
-  "updateSubscriber": {
+  "updateUserRemark": {
     "apiMethod": "updateRemark",
     "description": "更新某个微信订阅者的备注内容",
     "accepts": [{
-      "arg": "id",
-      "type": "string",
-      "required": true
-    },{
       "arg": "openid",
       "type": "string",
       "required": true
@@ -72,7 +60,53 @@
       "root": true
     },
     "http":{
-      "path": "/:id/subscribers/:openid",
+      "path": "/users/:openid/remark",
+      "verb": "put"
+    }
+  },
+
+
+  "findUserGroup":{
+    "apiMethod": "getWhichGroup",
+    "description": "查询用户在哪个分组",
+    "accepts": [{
+      "arg": "openid",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "group",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/users/:openid/group",
+      "verb": "get"
+    }
+  },
+
+  "updateUserGroup":{
+    "apiMethod": "moveUserToGroup",
+    "description": "移动用户进分组",
+    "accepts": [{
+      "arg": "openid",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "groupid",
+      "type": "string",
+      "required": true,
+      "http":{
+        "source":"form"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/users/:openid/group",
       "verb": "put"
     }
   }

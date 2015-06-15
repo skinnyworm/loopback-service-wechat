@@ -1,0 +1,27 @@
+{
+  "semantic": {
+    "apiMethod": "semantic",
+    "description": "发送语义理解请求",
+    "accepts": [{
+      "arg": "openid",
+      "type": "string",
+      "required": false
+    },{
+      "arg": "q",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/semantic/:openid",
+      "verb": "post"
+    }
+  }
+}

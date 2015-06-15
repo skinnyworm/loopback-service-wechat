@@ -1,0 +1,72 @@
+{
+  "shortUrl": {
+    "apiMethod": "shorturl",
+    "description": "生成短链接",
+    "accepts": [{
+      "arg": "longUrl",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/shorturl",
+      "verb": "get"
+    }
+  },
+
+  "createTmpQRCode": {
+    "apiMethod": "createTmpQRCode",
+    "description": "创建临时二维码, 返回的ticket通过https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=TICKET获得二维码图形",
+    "accepts": [{
+      "arg": "sceneId",
+      "type": "string",
+      "required": true,
+      "http": {
+        "source": "form"
+      }
+    },{
+      "arg": "expire",
+      "type": "number",
+      "required": true,
+      "http": {
+        "source": "form"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/qr/tmp",
+      "verb": "post"
+    }
+  },
+
+  "createLimitQRCode": {
+    "apiMethod": "createLimitQRCode",
+    "description": "创建永久二维码, 返回的ticket通过https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=TICKET获得二维码图形",
+    "accepts": [{
+      "arg": "sceneId",
+      "type": "string",
+      "required": true,
+      "http": {
+        "source": "form"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/qr/limit",
+      "verb": "post"
+    }
+  }
+
+}

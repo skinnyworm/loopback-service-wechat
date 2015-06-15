@@ -7,18 +7,10 @@
       "./models"
     ]
   },
-  "MessageContent": {
-    "dataSource": "remoteDS"
-  },
   "BaiduMap":{
     "dataSource": "baiduMap"
   },
   "Wechat": {
-    "dataSource": "mongoDb",
-    "public": true
-  },
-  "Organization": {
-    "dataSource": "mongoDb",
-    "public": true
+    "dataSource": "mongoDb"
   }
 }

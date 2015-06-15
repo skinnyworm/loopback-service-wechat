@@ -10,11 +10,6 @@
     "name": "db",
     "connector": "mongodb"
   },
-  "remoteDS": {
-    "url": "https://qunapps.com/api",
-    "name": "remoteDS",
-    "connector": "remote"
-  },
   "baiduMap":{
     "connector": "rest",
     "debug": "true",

@@ -1,0 +1,87 @@
+{
+  "setIndustry": {
+    "apiMethod": "setIndustry",
+    "description": "设置所属行业",
+    "accepts": [{
+      "arg": "industryIds",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/template/industry",
+      "verb": "put"
+    }
+  },
+
+  "addTemplate": {
+    "apiMethod": "addTemplate",
+    "description": "获得模板ID",
+    "accepts": [{
+      "arg": "templateIdShort",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/template/short/:templateIdShort",
+      "verb": "get"
+    }
+  },
+
+  "sendTemplate": {
+    "apiMethod": "sendTemplate",
+    "description": "发送模板消息",
+    "accepts": [{
+      "arg": "openid",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "templateId",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "templateUrl",
+      "type": "string",
+      "required": true,
+      "http":{
+        "source": "form"
+      }
+    },{
+      "arg": "topColor",
+      "type": "string",
+      "required": true,
+      "http":{
+        "source": "form"
+      }
+    },{
+      "arg": "data",
+      "type": "object",
+      "required": true,
+      "http":{
+        "source": "form"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/template/:templateId/:openid",
+      "verb": "post"
+    }
+  }
+
+}

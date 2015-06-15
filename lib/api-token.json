@@ -2,18 +2,14 @@
   "refreshToken": {
     "apiMethod": "getAccessToken",
     "description": "刷新微信号的Access Token并保存到微信号中",
-    "accepts": [{
-      "arg": "id",
-      "type": "string",
-      "required": true
-    }],
+    "accepts": [],
     "returns": {
       "arg": "token",
       "type": "object",
       "root":true
     },
     "http":{
-      "path": "/:id/refreshToken",
+      "path": "/refreshToken",
       "verb": "get"
     }
   }

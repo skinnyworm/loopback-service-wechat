@@ -1,0 +1,89 @@
+{
+  "createBroadcastMessage": {
+    "apiMethod": "broadcast",
+    "description": "群发消息",
+    "accepts": [{
+      "arg": "data",
+      "type": "object",
+      "required": true,
+      "http":{
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/broadcast/",
+      "verb": "post"
+    }
+  },
+
+  "previewBroadcastMessageByUser":{
+    "apiMethod": "broadcastPreview",
+    "description": "预览群发消息",
+    "accepts": [{
+      "arg": "openid",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "data",
+      "type": "object",
+      "required": true,
+      "http":{
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/broadcast/preview/:openid",
+      "verb": "post"
+    }
+  },
+
+
+
+  "deleteBroadcastMessage":{
+    "apiMethod": "deleteMass",
+    "description": "删除群发消息",
+    "accepts": [{
+      "arg": "messageId",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/broadcast/:messageId",
+      "verb": "delete"
+    }
+  },
+
+  "getBroadcastMessageStatus":{
+    "apiMethod": "getMassMessageStatus",
+    "description": "查询群发消息状态",
+    "accepts": [{
+      "arg": "messageId",
+      "type": "string",
+      "required": true
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/broadcast/:messageId/status",
+      "verb": "get"
+    }
+  }
+}

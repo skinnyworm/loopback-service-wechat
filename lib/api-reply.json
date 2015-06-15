@@ -1,0 +1,28 @@
+{
+  "reply": {
+    "apiMethod": "reply",
+    "description": "回复客服消息",
+    "accepts": [{
+      "arg": "openid",
+      "type": "string",
+      "required": true
+    },{
+      "arg": "data",
+      "description": "回复消息内容，由type和data两部分构成",
+      "type": "object",
+      "required": true,
+      "http": {
+        "source": "body"
+      }
+    }],
+    "returns": {
+      "arg": "result",
+      "type": "object",
+      "root":true
+    },
+    "http":{
+      "path": "/reply/:openid",
+      "verb": "post"
+    }
+  }
+}
