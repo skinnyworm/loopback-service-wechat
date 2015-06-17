@@ -1,0 +1,21 @@
+{
+  "name": "Message",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "content": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "wechat": {
+      "type": "belongsTo",
+      "model": "Wechat",
+      "foreignKey": "wechatId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
