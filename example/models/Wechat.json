@@ -18,9 +18,19 @@
     },
     "ticket": {
       "type": "object"
+    },
+    "receiverToken": {
+      "type": "string"
     }
   },
   "validations": [],
+  "relations": {
+    "messages": {
+      "type": "hasMany",
+      "model": "Message",
+      "foreignKey": "wechatId"
+    }
+  },
   "acls": [],
   "methods": []
 }

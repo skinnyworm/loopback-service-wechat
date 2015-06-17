@@ -1,4 +1,4 @@
-var NotifyRequest = require('../lib/notifyRequest');
+var NotifyRequest = require('../lib/messageReceiver');
 var expect = require('chai').expect;
 
 describe("NotifyRequest", function(){

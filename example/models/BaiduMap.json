@@ -4,6 +4,7 @@
   "idInjection": false,
   "properties": {},
   "validations": [],
+  "relations": {},
   "acls": [],
   "methods": []
 }

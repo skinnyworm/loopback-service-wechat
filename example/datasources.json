@@ -7,29 +7,34 @@
     "host": "localhost",
     "port": 27017,
     "database": "loopback_service_wechat",
-    "name": "db",
+    "name": "mongoDb",
     "connector": "mongodb"
   },
-  "baiduMap":{
+  "baiduMap": {
+    "name": "baiduMap",
     "connector": "rest",
     "debug": "true",
-    "operations": [{
-      "template": {
-        "method": "GET",
-        "url": "http://api.map.baidu.com/geocoder/v2/",
-        "headers": {
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://api.map.baidu.com/geocoder/v2/",
+          "headers": {
             "accepts": "application/json",
             "content-type": "application/json"
+          },
+          "query": {
+            "output": "json",
+            "ak": "XiZd42Z2Iv3eIoeGL1e5fGVH",
+            "address": "{address}"
+          }
         },
-        "query": {
-          "output": "json",
-          "ak": "XiZd42Z2Iv3eIoeGL1e5fGVH",
-          "address": "{address}"
+        "functions": {
+          "geocode": [
+            "address"
+          ]
         }
-      },
-      "functions": {
-        "geocode": ["address"]
       }
-    }]
+    ]
   }
 }
