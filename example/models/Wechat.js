@@ -6,16 +6,17 @@ module.exports = function(Wechat){
 
   WechatService.bindResponder(Wechat, function(responder){
 
-    responder.always(function(message, cb){
+    responder
+    .always(function(message, cb){
       this.messages.create({content: message}, cb);
-    });
-
-    responder.finally(function(message){
-      return {
+    })
+    .finally(function(message, reply){
+      reply({
         msgType: 'text',
         content: "Received :)"
-      };
+      });
     });
+
   });
 
 };

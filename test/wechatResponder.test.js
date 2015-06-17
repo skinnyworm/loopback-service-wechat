@@ -59,7 +59,7 @@ describe('WechatResponder', function(){
       responder.response(this, message, function(err, result){
         expect(err).to.equal(null);
         // response with empty given no handler registered
-        expect(result).to.equal('');
+        expect(result.content).to.equal('');
         done();
       });
     });
@@ -71,14 +71,14 @@ describe('WechatResponder', function(){
       }
 
       responder
-      .finally(function(msg, cb){
+      .finally(function(msg, reply){
         expect(msg).to.equal(message);
-        return ({msgType: 'text', content: 'content'});
+        reply.text('content');
       });
 
       responder.response(message, message, function(err, result){
         expect(err).to.equal(null);
-        console.log(result);
+        // console.log(result);
         done();
       });
     });

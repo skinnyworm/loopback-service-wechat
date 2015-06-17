@@ -7,7 +7,6 @@
 [2K[0G  [32m  ✓[0m[90m can validate signature[0m
 [0m    response function[0m
 [2K[0G    [32m  ✓[0m[90m should always do something then response something[0m
-<xml><ToUserName><![CDATA[fromUser]]></ToUserName><FromUserName><![CDATA[toUser]]></FromUserName><CreateTime>1434539311142</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[content]]></Content></xml>
 [2K[0G    [32m  ✓[0m[90m should response xml content[0m
 
 
