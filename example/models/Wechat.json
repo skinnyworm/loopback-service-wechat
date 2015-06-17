@@ -13,14 +13,14 @@
       "type": "string",
       "required": true
     },
-    "access_token": {
+    "apiToken": {
       "type": "object"
+    },
+    "respondToken": {
+      "type": "string"
     },
     "ticket": {
       "type": "object"
-    },
-    "receiverToken": {
-      "type": "string"
     }
   },
   "validations": [],

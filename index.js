@@ -1,5 +1,6 @@
 module.exports = {
   WechatApi: require('./lib/wechatApi'),
+  WechatResponder: require('./lib/wechatResponder'),
   bindApi: require('./lib/apiBinder'),
-  messageReceiver: require('./lib/messageReceiver')
+  bindResponder: require('./lib/responderBinder')
 }
