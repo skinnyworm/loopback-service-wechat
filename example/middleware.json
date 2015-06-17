@@ -10,6 +10,13 @@
   "auth": {
   },
   "parse": {
+    "express-xml-bodyparser":{
+      "params":{
+        "normalize": true,
+        "normalizeTags": false,
+        "explicitArray": false
+      }
+    }
   },
   "routes": {
     "loopback#status": {
