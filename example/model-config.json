@@ -7,9 +7,6 @@
       "./models"
     ]
   },
-  "BaiduMap": {
-    "dataSource": "baiduMap"
-  },
   "Wechat": {
     "dataSource": "mongoDb"
   },

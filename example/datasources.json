@@ -9,32 +9,5 @@
     "database": "loopback_service_wechat",
     "name": "mongoDb",
     "connector": "mongodb"
-  },
-  "baiduMap": {
-    "name": "baiduMap",
-    "connector": "rest",
-    "debug": "true",
-    "operations": [
-      {
-        "template": {
-          "method": "GET",
-          "url": "http://api.map.baidu.com/geocoder/v2/",
-          "headers": {
-            "accepts": "application/json",
-            "content-type": "application/json"
-          },
-          "query": {
-            "output": "json",
-            "ak": "XiZd42Z2Iv3eIoeGL1e5fGVH",
-            "address": "{address}"
-          }
-        },
-        "functions": {
-          "geocode": [
-            "address"
-          ]
-        }
-      }
-    ]
   }
 }
